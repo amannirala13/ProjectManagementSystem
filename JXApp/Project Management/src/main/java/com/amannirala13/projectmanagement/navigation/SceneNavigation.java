@@ -1,9 +1,15 @@
 package com.amannirala13.projectmanagement.navigation;
 
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.HashMap;
+import java.util.Objects;
 
 /**
  * Used for navigation and scene transformation
@@ -25,15 +31,15 @@ public class SceneNavigation {
         this.main = main;
     }
 
-    protected void addScreen(String name, Pane pane){
+    public void addScreen(String name, Pane pane) throws IOException {
         sceneMap.put(name, pane);
     }
 
-    protected void removeScreen(String name){
+    public void removeScreen(String name){
         sceneMap.remove(name);
     }
 
-    protected void activateScreen(String name){
+    public void activateScreen(String name){
         main.setRoot(sceneMap.get(name));
     }
 

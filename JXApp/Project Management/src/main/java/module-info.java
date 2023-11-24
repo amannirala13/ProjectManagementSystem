@@ -8,6 +8,7 @@ module com.amannirala13.projectmanagement {
     requires net.synedra.validatorfx;
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
+    requires java.sql;
 
     opens com.amannirala13.projectmanagement to javafx.fxml;
     exports com.amannirala13.projectmanagement;
