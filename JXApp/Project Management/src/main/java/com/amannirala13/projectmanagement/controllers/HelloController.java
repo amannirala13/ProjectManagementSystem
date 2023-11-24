@@ -1,4 +1,4 @@
-package com.amannirala13.projectmanagement;
+package com.amannirala13.projectmanagement.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

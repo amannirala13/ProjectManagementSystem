@@ -11,4 +11,6 @@ module com.amannirala13.projectmanagement {
 
     opens com.amannirala13.projectmanagement to javafx.fxml;
     exports com.amannirala13.projectmanagement;
+    exports com.amannirala13.projectmanagement.controllers;
+    opens com.amannirala13.projectmanagement.controllers to javafx.fxml;
 }
