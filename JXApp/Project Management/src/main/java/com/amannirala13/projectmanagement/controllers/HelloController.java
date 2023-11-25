@@ -1,5 +1,6 @@
 package com.amannirala13.projectmanagement.controllers;
 
+import com.amannirala13.projectmanagement.database.auth.DBAuth;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
@@ -9,6 +10,10 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        boolean success = DBAuth.createUser("Aman Nirala", "SDE", "IT");
+
+        if(success)
+            welcomeText.setText("User Created");
+        else welcomeText.setText("Failed to create user");
     }
 }

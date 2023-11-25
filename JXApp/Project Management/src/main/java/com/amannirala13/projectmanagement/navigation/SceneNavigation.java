@@ -12,12 +12,13 @@ import java.util.HashMap;
 import java.util.Objects;
 
 /**
- * Used for navigation and scene transformation
+ * Navigator used for route based navigation in JavaFx.
+ *
  * @author Aman Kumar Nirala
  */
 public class SceneNavigation {
     private static SceneNavigation _singleInstance = null;
-    private HashMap <String, Pane> sceneMap= new HashMap<>();
+    private HashMap <Routes, Pane> sceneMap= new HashMap<>();
     private Scene main;
 
 
@@ -31,16 +32,16 @@ public class SceneNavigation {
         this.main = main;
     }
 
-    public void addScreen(String name, Pane pane) throws IOException {
-        sceneMap.put(name, pane);
+    public void addScreen(Routes route, Pane pane) throws IOException {
+        sceneMap.put(route, pane);
     }
 
-    public void removeScreen(String name){
-        sceneMap.remove(name);
+    public void removeScreen(Routes route){
+        sceneMap.remove(route);
     }
 
-    public void activateScreen(String name){
-        main.setRoot(sceneMap.get(name));
+    public void activateScreen(Routes routes){
+        main.setRoot(sceneMap.get(routes));
     }
 
 }
