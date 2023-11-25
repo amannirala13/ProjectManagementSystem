@@ -5,6 +5,7 @@ import com.amannirala13.projectmanagement.models.ProjectModel;
 import com.amannirala13.projectmanagement.navigation.Routes;
 import com.amannirala13.projectmanagement.navigation.SceneNavigation;
 import javafx.fxml.FXML;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Label;
 
 public class CurrentProjectController {
@@ -56,5 +57,11 @@ public class CurrentProjectController {
         endDate.setText(pm.getEndDate());
         bufferDays.setText(pm.getBufferDays());
         projStatus.setText((!pm.isCompleted())?"Active":"Complete");
+    }
+
+    @FXML
+    public void addTask() {
+        SceneNavigation.getInstance(null).activateScreen(Routes.TASK_PAGE);
+        SceneNavigation.setIndentData(String.format("%s",currentIndex));
     }
 }

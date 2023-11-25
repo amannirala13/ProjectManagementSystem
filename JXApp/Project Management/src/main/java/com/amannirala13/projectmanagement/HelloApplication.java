@@ -30,6 +30,7 @@ public class HelloApplication extends Application {
         sceneNavigation.addScreen(Routes.CREATE_NEW_PROJECT, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CreateProject1.fxml"))));
         sceneNavigation.addScreen(Routes.CURRENT_PROJECTS, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CurrentProjects.fxml"))));
         sceneNavigation.addScreen(Routes.PROJECT_PAGE, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("ProjectPage.fxml"))));
+        sceneNavigation.addScreen(Routes.TASK_PAGE, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("TaskPage.fxml"))));
 
 
         sceneNavigation.activateScreen(Routes.DASHBOARD);

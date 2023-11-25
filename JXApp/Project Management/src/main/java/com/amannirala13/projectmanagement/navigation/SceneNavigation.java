@@ -29,7 +29,7 @@ public class SceneNavigation {
         SceneNavigation.indentData = data;
     }
 
-    public static String getIndentData(String data){
+    public static String getIndentData(){
         return SceneNavigation.indentData;
     }
 

@@ -1,57 +1,60 @@
 package com.amannirala13.projectmanagement.controllers;
 
 import com.amannirala13.projectmanagement.database.project.DBProject;
+import com.amannirala13.projectmanagement.database.store.DataStore;
+import com.amannirala13.projectmanagement.database.task.DbTask;
 import com.amannirala13.projectmanagement.helper.Helper;
 import com.amannirala13.projectmanagement.navigation.Routes;
 import com.amannirala13.projectmanagement.navigation.SceneNavigation;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import org.w3c.dom.Text;
 
 public class TaskController {
 
     @FXML
-    private TextField projectIdText;
+    private TextField TaskName;
     @FXML
-    private TextField projectNameText;
+    private TextField StartDate;
     @FXML
-    private TextField projectStartDate;
+    private TextField Duration;
     @FXML
-    private TextField projectEndDate;
-    @FXML
-    private TextField projectBufferDaysText;
+    private TextField Note;
 
 
 
     @FXML
     public void reset() {
-        projectIdText.setText("");
-        projectNameText.setText("");
-        projectStartDate.setText("");
-        projectEndDate.setText("");
-        projectBufferDaysText.setText("");
+        TaskName.setText("");
+        StartDate.setText("");
+        Duration.setText("");
+        Note.setText("");
     }
 
     @FXML
     public void submit(){
-        String projectName = projectNameText.getText();
-        String startDate = projectStartDate.getText();
-        String endDate = projectEndDate.getText();
-        String bufferDays = projectBufferDaysText.getText();
+        String taskName = TaskName.getText();
+        String startDate = StartDate.getText();
+        String duration = Duration.getText();
+        String note = Note.getText();
 
-        String projectID = DBProject.createProject(
-                projectName,
+        boolean success = DbTask.createTask(
+                DataStore.projectsDataStore.get(Integer.parseInt(SceneNavigation.getIndentData())).getProjectId(),
+                taskName,
+                note,
                 startDate,
-                endDate,
-                bufferDays,
+                duration,
                 false
         );
 
-        if(projectID == null) {
-            System.out.println("Unable to create project!!");
+        if(!success) {
+            System.out.println("Unable to create task!!");
         }
         else {
-            System.out.println("Created project");
+            System.out.println("Created Task");
             reset();
+            DataStore.loadTasks();
+            SceneNavigation.getInstance(null).activateScreen(Routes.CURRENT_PROJECTS);
         }
     }
 

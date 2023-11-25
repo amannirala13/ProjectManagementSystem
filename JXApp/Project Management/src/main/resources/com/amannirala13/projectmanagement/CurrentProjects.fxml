@@ -91,7 +91,7 @@
                           </rowConstraints>
                            <children>
                               <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="231.0" text="Task List" />
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Add Task" GridPane.rowIndex="1" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="239.0" text="Add Task" GridPane.rowIndex="1" onAction="#addTask"/>
                               <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="230.0" text="Delete Task" GridPane.rowIndex="2" />
                            </children>
                         </GridPane>
