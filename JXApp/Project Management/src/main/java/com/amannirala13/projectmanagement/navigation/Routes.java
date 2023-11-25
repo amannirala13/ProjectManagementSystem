@@ -4,6 +4,7 @@ public enum Routes {
     DASHBOARD,
     CURRENT_PROJECTS,
     CREATE_NEW_PROJECT,
-    PROJECT_PAGE
+    PROJECT_PAGE,
+    TASK_PAGE
 
 }
