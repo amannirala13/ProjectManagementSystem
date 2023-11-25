@@ -3,18 +3,21 @@ package com.amannirala13.projectmanagement.database;
 import java.sql.*;
 
 /**
+ * Utility for connecting to database using JDBC and running
+ * select and update commands.
+ *
  * @author Sayanee Ghosh
  */
 public class DBConnector {
     private static DBConnector _instance = null;
-    private String driverName = "com.mysql.cj.jdbc.Driver";
-    private String url = "jdbc:mysql://db4free.net:3306";
-    private String userName = "aman13";
-    private String password = "amAn1313";
+    private final String driverName = "com.mysql.cj.jdbc.Driver";
+    private final String url = "jdbc:mysql://db4free.net:3306/production_13130";
+    private final String userName = "aman13";
+    private final String password = "amAn1313";
 
     private Connection connection = null;
 
-    public static synchronized DBConnector get_instance() {
+    public static synchronized DBConnector getInstance() {
         if(_instance == null)
             _instance = new DBConnector();
 
