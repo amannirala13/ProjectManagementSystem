@@ -1,15 +1,15 @@
 package com.amannirala13.projectmanagement.models;
 
-import java.util.Date;
-
 public class ProjectModel {
     private String projectId;
     private String title;
     private String[] owners;
-    private Date startDate;
-    private Date endDate;
-    private Long bufferDays;
+    private String startDate;
+    private String endDate;
+    private String bufferDays;
     private TaskModel[] tasks;
+
+    private boolean completed;
 
     public String getProjectId() {
         return projectId;
@@ -35,27 +35,27 @@ public class ProjectModel {
         this.owners = owners;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
-    public Long getBufferDays() {
+    public String getBufferDays() {
         return bufferDays;
     }
 
-    public void setBufferDays(Long bufferDays) {
+    public void setBufferDays(String bufferDays) {
         this.bufferDays = bufferDays;
     }
 
@@ -66,7 +66,24 @@ public class ProjectModel {
     public void setTasks(TaskModel[] tasks) {
         this.tasks = tasks;
     }
-    public ProjectModel(String title, String[] owners, Date startDate, Date endDate, Long bufferDays, TaskModel[] tasks, String projectId) {
+
+    public boolean isCompleted() {
+        return completed;
+    }
+
+    public void setCompleted(boolean completed) {
+        this.completed = completed;
+    }
+
+    public ProjectModel(
+            String projectId,
+            String title,
+            String[] owners,
+            String startDate,
+            String endDate,
+            String bufferDays,
+            TaskModel[] tasks,
+            boolean completed) {
         this.title = title;
         this.owners = owners;
         this.startDate = startDate;
@@ -74,5 +91,6 @@ public class ProjectModel {
         this.bufferDays = bufferDays;
         this.tasks = tasks;
         this.projectId = projectId;
+        this.completed = completed;
     }
 }

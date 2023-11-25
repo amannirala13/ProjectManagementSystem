@@ -26,7 +26,7 @@ public class DBConnector {
 
     public DBConnector(){
         try{
-            Class.forName(driverName).newInstance();
+            Class.forName(driverName);
         } catch (Exception e ){
             System.out.println(e.getMessage());
         }
@@ -51,6 +51,7 @@ public class DBConnector {
             System.out.println("SQLState: " + e.getSQLState());
             System.out.println("VendorError: " + e.getErrorCode());
         }
+
         return resultSet;
     }
 

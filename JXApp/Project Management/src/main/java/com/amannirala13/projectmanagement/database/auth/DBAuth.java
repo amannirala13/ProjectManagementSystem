@@ -1,12 +1,13 @@
 package com.amannirala13.projectmanagement.database.auth;
 
 import com.amannirala13.projectmanagement.database.DBConnector;
+import com.amannirala13.projectmanagement.helper.Helper;
 import com.amannirala13.projectmanagement.models.UserModel;
 
 public class DBAuth {
     public static boolean createUser(String name, String role, String department){
         UserModel md = new UserModel(
-                String.format("%s", (int) Math.ceil(Math.random() * 999999)),
+                Helper.generateUUID(),
                 name,
                 role,
                 department);

@@ -1,47 +1,50 @@
 package com.amannirala13.projectmanagement.controllers;
 
-import com.amannirala13.projectmanagement.models.TaskModel;
-import com.amannirala13.projectmanagement.models.ProjectModel;
-import java.util.Date;
+import com.amannirala13.projectmanagement.database.project.DBProject;
+import com.amannirala13.projectmanagement.helper.Helper;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class CreateProject {
+public class CreateProjectController {
 
     @FXML
-    public Label reset;
-    
+    private TextField projectIdText;
     @FXML
-    public TextField ProjectID;
-    
+    private TextField projectNameText;
     @FXML
-    public TextField ProjectName;
-    
+    private TextField projectStartDate;
     @FXML
-    public TextField StartDate;
-    
+    private TextField projectEndDate;
     @FXML
-    public TextField EndDate;
-    
+    private TextField projectBufferDaysText;
+
+
+
     @FXML
-    public TextField BufferDays;
-    
-    
-    @FXML
-    public reset() {
-       ProjectID.clear();
-       ProjectName.clear();
-       StartDate.clear();
-       EndDate.clear();
-       BufferDays.clear();
+    public void reset(){
+        projectIdText.setText("");
     }
-    
+
     @FXML
-    public void submit() {
-        setProjectId(ProjectID.getText());
-        setTitle(ProjectName.getText());
-        setStartDate(StartDate.getText());
-        setEndDate(EndDate.getText());
-        setBufferDays(BufferDays.getText());
+    public void submit(){
+        String projectName = projectNameText.getText();
+        String startDate = projectStartDate.getText();
+        String endDate = projectEndDate.getText();
+        String bufferDays = projectBufferDaysText.getText();
+
+        boolean status = DBProject.createProject(
+                projectName,
+                startDate,
+                endDate,
+                bufferDays,
+                false
+        );
+
+        if(!status)
+            System.out.println("Unable to create project!!");
+        else System.out.println("Created project");
+    }
+
+
 }
-}
+
