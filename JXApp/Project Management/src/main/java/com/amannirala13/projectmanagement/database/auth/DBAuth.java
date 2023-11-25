@@ -6,7 +6,7 @@ import com.amannirala13.projectmanagement.models.UserModel;
 public class DBAuth {
     public static boolean createUser(String name, String role, String department){
         UserModel md = new UserModel(
-                String.format("%s", Math.ceil(Math.random() * 99999999)),
+                String.format("%s", (int) Math.ceil(Math.random() * 999999)),
                 name,
                 role,
                 department);
