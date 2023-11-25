@@ -38,7 +38,7 @@ public class CreateProjectController {
         String endDate = projectEndDate.getText();
         String bufferDays = projectBufferDaysText.getText();
 
-        boolean status = DBProject.createProject(
+        String projectID = DBProject.createProject(
                 projectName,
                 startDate,
                 endDate,
@@ -46,12 +46,14 @@ public class CreateProjectController {
                 false
         );
 
-        if(!status) {
+        if(projectID == null) {
             System.out.println("Unable to create project!!");
         }
         else {
             System.out.println("Created project");
             reset();
+            SceneNavigation.getInstance(null).activateScreen(Routes.DASHBOARD);
+            SceneNavigation.setIndentData(projectID);
         }
     }
 

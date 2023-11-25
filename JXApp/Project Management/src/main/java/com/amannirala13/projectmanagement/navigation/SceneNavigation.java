@@ -1,15 +1,10 @@
 package com.amannirala13.projectmanagement.navigation;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.HashMap;
-import java.util.Objects;
 
 /**
  * Navigator used for route based navigation in JavaFx.
@@ -18,6 +13,8 @@ import java.util.Objects;
  */
 public class SceneNavigation {
     private static SceneNavigation _singleInstance = null;
+
+    private static String indentData = null;
     private HashMap <Routes, Pane> sceneMap= new HashMap<>();
     private Scene main;
 
@@ -26,6 +23,14 @@ public class SceneNavigation {
         if (_singleInstance == null)
             _singleInstance = new SceneNavigation(main);
         return _singleInstance;
+    }
+
+    public static void setIndentData(String data){
+        SceneNavigation.indentData = data;
+    }
+
+    public static String getIndentData(String data){
+        return SceneNavigation.indentData;
     }
 
     public SceneNavigation(Scene main){

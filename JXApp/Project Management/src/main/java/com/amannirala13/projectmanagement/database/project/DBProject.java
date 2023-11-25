@@ -12,7 +12,7 @@ import java.util.Date;
 
 public class DBProject {
 
-    public static boolean createProject(
+    public static String createProject(
             String title,
             String startDate,
             String endDate,
@@ -41,7 +41,7 @@ public class DBProject {
                 return false;
         }**/
 
-        return DBConnector.getInstance().runUpdateQuery(
+        boolean status = DBConnector.getInstance().runUpdateQuery(
                 String.format("INSERT INTO projects VALUES( '%s', '%s', '%s', '%s', '%s', %s)",
                         projectModel.getProjectId(),
                         projectModel.getTitle(),
@@ -49,6 +49,8 @@ public class DBProject {
                         projectModel.getEndDate(),
                         projectModel.getBufferDays(),
                         projectModel.isCompleted()));
+
+        return (status)? projectModel.getProjectId() : null;
     }
 
     public static ArrayList<ProjectModel> getProjects(){

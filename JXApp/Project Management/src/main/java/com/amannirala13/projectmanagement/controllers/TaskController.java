@@ -7,7 +7,7 @@ import com.amannirala13.projectmanagement.navigation.SceneNavigation;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
-public class CreateProjectController {
+public class TaskController {
 
     @FXML
     private TextField projectIdText;
@@ -38,7 +38,7 @@ public class CreateProjectController {
         String endDate = projectEndDate.getText();
         String bufferDays = projectBufferDaysText.getText();
 
-        boolean status = DBProject.createProject(
+        String projectID = DBProject.createProject(
                 projectName,
                 startDate,
                 endDate,
@@ -46,7 +46,7 @@ public class CreateProjectController {
                 false
         );
 
-        if(!status) {
+        if(projectID == null) {
             System.out.println("Unable to create project!!");
         }
         else {

@@ -17,16 +17,16 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="113.0">
                <children>
-                  <Label layoutX="26.0" layoutY="58.0" prefHeight="25.0" prefWidth="123.0" text="Project Name">
+                  <Label fx:id="projectName" layoutX="26.0" layoutY="58.0" prefHeight="25.0" prefWidth="123.0" text="Project Name">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="26.0" layoutY="107.0" text="Start Date" />
-                  <Label layoutX="26.0" layoutY="130.0" text="End Date" />
-                  <Label layoutX="26.0" layoutY="153.0" text="Buffer Days" />
-                  <Label layoutX="26.0" layoutY="176.0" text="Project Status" />
-                  <Label layoutX="26.0" layoutY="199.0" text="Remaining Days" />
+                  <Label fx:id="startDate" layoutX="26.0" layoutY="107.0" text="Start Date" />
+                  <Label fx:id="endDate" layoutX="26.0" layoutY="130.0" text="End Date" />
+                  <Label fx:id="bufferDays" layoutX="26.0" layoutY="153.0" text="Buffer Days" />
+                  <Label fx:id="projectStatus" layoutX="26.0" layoutY="176.0" text="Project Status" />
+                  <Label fx:id="remainingDays" layoutX="26.0" layoutY="199.0" text="Remaining Days" visible="false" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
