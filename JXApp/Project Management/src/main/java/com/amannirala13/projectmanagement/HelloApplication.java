@@ -26,7 +26,7 @@ public class HelloApplication extends Application {
         sceneNavigation.addScreen(Routes.DASHBOARD, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml"))));
 
 
-        //sceneNavigation.activateScreen(Routes.DASHBOARD);
+        sceneNavigation.activateScreen(Routes.DASHBOARD);
 
         stage.setTitle("Project Management System");
         stage.setFullScreen(true);
