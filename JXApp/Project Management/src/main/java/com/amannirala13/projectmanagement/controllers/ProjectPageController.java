@@ -17,7 +17,7 @@ public class ProjectPageController {
 
     @FXML
     public void showList() {
-        ResultSet resultSet = DBConnector.getInstance().runSelectQuery("SELECT * FROM tasks;");
+        ResultSet resultSet = DBConnector.getInstance().runSelectQuery("SELECT * FROM projects;");
         
     }
 
