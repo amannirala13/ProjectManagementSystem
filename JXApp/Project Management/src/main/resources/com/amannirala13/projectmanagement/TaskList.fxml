@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="-2.0" layoutY="40.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="244.0" prefWidth="113.0">
+               <children>
+                  <Label layoutX="26.0" layoutY="58.0" prefHeight="25.0" prefWidth="123.0" text="Task Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="111.0" text="Start Date" />
+                  <Label layoutX="26.0" layoutY="137.0" text="Duration (in days)" />
+                  <Label layoutX="26.0" layoutY="167.0" text="Task Status" />
+                  <Button layoutX="27.0" layoutY="215.0" mnemonicParsing="false" text="Prev" />
+                  <Button layoutX="86.0" layoutY="215.0" mnemonicParsing="false" text="Next" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <GridPane layoutX="95.0" layoutY="115.0" prefHeight="168.0" prefWidth="228.0" style="-fx-border-color: black;">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints maxHeight="120.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" prefHeight="105.0" prefWidth="228.0" style="-fx-wrap-text: true;" text="Task Notes and Desc" />
+                        <Label alignment="CENTER" prefHeight="17.0" prefWidth="226.0" text="Assigned to" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <ButtonBar prefHeight="40.0" prefWidth="600.0" style="-fx-background-color: gray;">
+        <buttons>
+            <Label prefHeight="17.0" prefWidth="320.0" text="Task List" textFill="WHITE" />
+            <Button layoutX="535.0" layoutY="18.0" mnemonicParsing="false" text="Home" />
+          <Button mnemonicParsing="false" text="Back" />
+        </buttons>
+      </ButtonBar>
+   </children>
+</AnchorPane>
