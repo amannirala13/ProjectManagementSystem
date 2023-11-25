@@ -2,6 +2,7 @@ package com.amannirala13.projectmanagement;
 
 import com.amannirala13.projectmanagement.database.DBConnector;
 import com.amannirala13.projectmanagement.database.auth.DBAuth;
+import com.amannirala13.projectmanagement.database.store.DataStore;
 import com.amannirala13.projectmanagement.navigation.Routes;
 import com.amannirala13.projectmanagement.navigation.SceneNavigation;
 import javafx.application.Application;
@@ -23,7 +24,8 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
         sceneNavigation = SceneNavigation.getInstance(scene);
         dbConnector = DBConnector.getInstance();
-
+        DataStore.loadProjects();
+        DataStore.loadTasks();
         sceneNavigation.addScreen(Routes.DASHBOARD, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Dashboard.fxml"))));
         sceneNavigation.addScreen(Routes.CREATE_NEW_PROJECT, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CreateProject1.fxml"))));
         sceneNavigation.addScreen(Routes.CURRENT_PROJECTS, FXMLLoader.load(Objects.requireNonNull(getClass().getResource("CurrentProjects.fxml"))));

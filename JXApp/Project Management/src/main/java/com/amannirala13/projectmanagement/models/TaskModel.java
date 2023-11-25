@@ -1,13 +1,12 @@
 package com.amannirala13.projectmanagement.models;
 
-import java.util.Date;
-
 public class TaskModel {
+    private String projectId;
     private String title;
     private String[] assignedTo;
     private String note;
-    private Date startDate;
-    private Long durationInDays;
+    private String startDate;
+    private String durationInDays;
     private boolean completed;
     private String[] resources;
 
@@ -35,19 +34,19 @@ public class TaskModel {
         this.note = note;
     }
 
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
-    public Long getDurationInDays() {
+    public String getDurationInDays() {
         return durationInDays;
     }
 
-    public void setDurationInDays(Long durationInDays) {
+    public void setDurationInDays(String durationInDays) {
         this.durationInDays = durationInDays;
     }
 
@@ -67,7 +66,24 @@ public class TaskModel {
         this.resources = resources;
     }
 
-    public TaskModel(String title, String[] assignedTo, String note, Date startDate, Long durationInDays, boolean completed, String[] resources) {
+    public String getProjectId() {
+        return projectId;
+    }
+
+    public void setProjectId(String projectId) {
+        this.projectId = projectId;
+    }
+
+    public TaskModel(
+            String projectId,
+            String title,
+            String[] assignedTo,
+            String note,
+            String startDate,
+            String durationInDays,
+            boolean completed,
+            String[] resources) {
+        this.projectId = projectId;
         this.title = title;
         this.assignedTo = assignedTo;
         this.note = note;

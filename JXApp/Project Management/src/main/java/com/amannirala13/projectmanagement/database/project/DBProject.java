@@ -53,6 +53,31 @@ public class DBProject {
         return (status)? projectModel.getProjectId() : null;
     }
 
+    public static ProjectModel getProjectByID(String id){
+        ProjectModel projectModel = null;
+        try{
+            ResultSet resultSet = DBConnector.getInstance().runSelectQuery(
+                    String.format("SELECT * FROM projects WHERE id = '%s'", id)
+            );
+
+            while (resultSet.next()){
+                projectModel = new ProjectModel(
+                        resultSet.getString("id"),
+                        resultSet.getString("title"),
+                        null,
+                        resultSet.getString("startDate"),
+                        resultSet.getString("endDate"),
+                        resultSet.getString("bufferDays"),
+                        null,
+                        resultSet.getBoolean("complete")
+                        );
+            }
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return projectModel;
+    }
+
     public static ArrayList<ProjectModel> getProjects(){
         ArrayList<ProjectModel> projects = new ArrayList<>();
         ResultSet resultSet = DBConnector.getInstance().runSelectQuery("SELECT * FROM projects;");

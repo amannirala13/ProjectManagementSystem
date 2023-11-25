@@ -26,12 +26,14 @@ CREATE TABLE tasks (
     note VARCHAR(100),
     startDate VARCHAR(50),
     duration VARCHAR(50),
-    assignedTo VARCHAR(100),
+    isComplete BOOLEAN,
 
-    FOREIGN KEY projId REFERENCES projects(id),
+    FOREIGN KEY (projId) REFERENCES projects(id),
     PRIMARY KEY (projId, taskName)
 );
 
 SELECT * FROM projects;
+SELECT * FROM tasks;
 
 DROP TABLE projects;
+DROP TABLE tasks;
