@@ -21,8 +21,12 @@ public class CreateProjectController {
 
 
     @FXML
-    public void reset(){
+    public void reset() {
         projectIdText.setText("");
+        projectNameText.setText("");
+        projectStartDate.setText("");
+        projectEndDate.setText("");
+        projectBufferDaysText.setText("");
     }
 
     @FXML
@@ -40,11 +44,13 @@ public class CreateProjectController {
                 false
         );
 
-        if(!status)
+        if(!status) {
             System.out.println("Unable to create project!!");
-        else System.out.println("Created project");
+        }
+        else {
+            System.out.println("Created project");
+            reset();
+        }
     }
-
-
 }
 
