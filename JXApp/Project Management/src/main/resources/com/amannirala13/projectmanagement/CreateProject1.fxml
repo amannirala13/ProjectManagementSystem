@@ -40,7 +40,7 @@
          <children>
             <Label prefHeight="17.0" prefWidth="87.0" text="Project ID" />
             <Label prefHeight="17.0" prefWidth="128.0" text="Project Name" GridPane.rowIndex="1" />
-            <Label GridPane.rowIndex="2" />
+            <Label text="Start Date" GridPane.rowIndex="2" />
             <Label prefHeight="17.0" prefWidth="117.0" text="End Date" GridPane.rowIndex="3" />
             <Label prefHeight="17.0" prefWidth="105.0" text="Buffer Days" GridPane.rowIndex="4" />
             <TextField GridPane.columnIndex="1" />
