@@ -15,9 +15,9 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="26.0" layoutY="111.0" text="Start Date" />
-                  <Label layoutX="26.0" layoutY="137.0" text="Duration (in days)" />
-                  <Label layoutX="26.0" layoutY="167.0" text="Task Status" />
+                  <Label fx:id="sDate" layoutX="26.0" layoutY="111.0" text="Start Date" />
+                  <Label fx:id="duration" layoutX="26.0" layoutY="137.0" text="Duration (in days)" />
+                  <Label fx:id="taskStatus" layoutX="26.0" layoutY="167.0" text="Task Status" />
                   <Button layoutX="27.0" layoutY="215.0" mnemonicParsing="false" text="Prev" />
                   <Button layoutX="86.0" layoutY="215.0" mnemonicParsing="false" text="Next" />
                </children>
@@ -58,11 +58,11 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
-                        <Label layoutX="26.0" layoutY="107.0" text="Start Date" />
-                        <Label layoutX="26.0" layoutY="130.0" text="End Date" />
-                        <Label layoutX="26.0" layoutY="153.0" text="Buffer Days" />
-                        <Label layoutX="26.0" layoutY="176.0" text="Project Status" />
-                        <Label layoutX="26.0" layoutY="199.0" text="Remaining Days" />
+                        <Label fx:id="startDate" layoutX="26.0" layoutY="107.0" text="Start Date" />
+                        <Label fx:id="endDate" layoutX="26.0" layoutY="130.0" text="End Date" />
+                        <Label fx:id="bufferDays" layoutX="26.0" layoutY="153.0" text="Buffer Days" />
+                        <Label fx:id="projStatus" layoutX="26.0" layoutY="176.0" text="Project Status" />
+                        <Label layoutX="26.0" layoutY="199.0" text="Remaining Days"  />
                         <GridPane layoutX="21.0" layoutY="244.0" prefHeight="33.0" prefWidth="132.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
