@@ -20,6 +20,18 @@ CREATE TABLE projects (
                        complete BOOLEAN
 );
 
+CREATE TABLE tasks (
+    projId VARCHAR(100),
+    taskName VARCHAR(100),
+    note VARCHAR(100),
+    startDate VARCHAR(50),
+    duration VARCHAR(50),
+    assignedTo VARCHAR(100),
+
+    FOREIGN KEY projId REFERENCES projects(id),
+    PRIMARY KEY (projId, taskName)
+);
+
 SELECT * FROM projects;
 
 DROP TABLE projects;
