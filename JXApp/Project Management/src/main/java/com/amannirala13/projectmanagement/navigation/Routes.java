@@ -2,6 +2,7 @@ package com.amannirala13.projectmanagement.navigation;
 
 public enum Routes {
     DASHBOARD,
-    PROJECTS,
+    CURRENT_PROJECTS,
+    CREATE_NEW_PROJECT,
 
 }

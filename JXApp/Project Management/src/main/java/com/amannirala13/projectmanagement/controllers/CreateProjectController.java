@@ -2,6 +2,8 @@ package com.amannirala13.projectmanagement.controllers;
 
 import com.amannirala13.projectmanagement.database.project.DBProject;
 import com.amannirala13.projectmanagement.helper.Helper;
+import com.amannirala13.projectmanagement.navigation.Routes;
+import com.amannirala13.projectmanagement.navigation.SceneNavigation;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 
@@ -51,6 +53,11 @@ public class CreateProjectController {
             System.out.println("Created project");
             reset();
         }
+    }
+
+    @FXML
+    public void back(){
+        SceneNavigation.getInstance(null).activateScreen(Routes.DASHBOARD);
     }
 }
 
